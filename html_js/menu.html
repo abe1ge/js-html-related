@@ -1,0 +1,98 @@
+<html>
+	<head>
+	</head>
+	<script>
+	
+		function enterMenu(a)
+		{
+			document.getElementById(a).style.visibility= "visible";
+		}
+		function leaveMenu(a)
+		{
+			document.getElementById(a).style.visibility= "hidden";
+		}
+		
+		function textInfo(name)
+		{
+			var t = document.getElementById("textInformation");
+			if (name.innerHTML == "Football") t.innerHTML = "this is FOOOOOOOTBALLLL";
+			if (name.innerHTML == "Hockey") t.innerHTML = "this is HockyLLL";
+		}	
+	</script>
+	
+	<style>
+		.span
+		{
+		 float: left;
+		}
+			
+		.menuItem:hover
+		{
+			background-color:green;
+		}
+		
+		
+		.menuItem
+		{
+			border: 1px solid green;
+			font-size: 16px;
+			margin: 1px 2px;
+			cursor: pointer;
+		}
+		button:hover
+		{
+			background-color:red;
+		}
+		button {
+			background-color: #4CAF50;
+			border: 1px solid green;
+			color: white;
+			padding: 5px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+		
+	</style>
+	
+	<body>
+	<span id= "mainMenu" class="span" >
+		<div id="sportMenu" class="span" onmouseleave = "leaveMenu('sportHide')" >
+			<span id = "spanCricket">
+				<span class ="menuItem" onmouseenter = "enterMenu('sportHide')">Sports</span>
+				<br>
+				<span id= "sportHide" style = "visibility:hidden">
+					<span class ="menuItem">Cricket</span>
+					<br>
+					<span class ="menuItem" onclick = "textInfo(this)">Football</span>
+					<br>
+					<span class ="menuItem" onclick = "textInfo(this)">Hockey</span>
+				</span>
+			</span>
+			<br>
+		</div>
+		
+		<div id="countriesMenu" class="span" onmouseleave = "leaveMenu('countriesHide')" >
+			<span id = "spanCountries">
+				<span class ="menuItem" onmouseenter = "enterMenu('countriesHide')">Countries</span>
+				<br>
+				<span id= "countriesHide" style = "visibility:hidden">
+					<span class ="menuItem" >United Kingdom </span>
+					<br>
+					<span class ="menuItem">Usa </span>
+					<br>
+					<span class ="menuItem">Pakistan</span>
+				</span>
+			</span>
+			<br>
+		</div>
+		
+	</span>
+	<span id="textInformation">
+		text
+		</span>
+	</body>
+</html>

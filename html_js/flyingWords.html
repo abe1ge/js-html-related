@@ -1,0 +1,36 @@
+<html>
+	<head>
+	</head>
+	<script>
+		function getText()
+		{
+			var s = window.document.getElementById("textbox1");
+			var text = window.document.getElementById("message");
+			
+			if (s.value != "")
+			{
+				text.value = s.value;
+			}
+		}
+		
+		function moveText()
+		{
+		 var s = window.document.getElementById("message");
+		 s.style.top = window.event.clientY;
+		 s.style.left = window.event.clientX;
+		}
+		
+		
+	</script>
+	
+	<body onmousemove = "moveText()">
+		<span id="spanTextBox" style="position:absolute; top:1; left:1;" onmousemove= "getText()">
+			Cord : <input id = "textbox1"Type="Text">
+		</span>
+	</body>
+	
+	<span id="message" style="position:absolute; top:100; top:100" onmousemove = "">
+		Qa Consulting
+	</span>
+	
+</html>

@@ -1,0 +1,55 @@
+<html>
+	<head>
+	</head>
+	<style>
+	.error
+	{
+	color:red;
+	}
+	</style>
+	<script>
+		function check1()
+		{
+		var correct = true;
+		
+		if(document.forms[0].userName.value == "")
+		{
+			document.getElementById("spanUser").innerHTML = "The username is empty";
+			correct = false;
+		}
+		if(document.forms[0].password.value == "")
+		{
+			document.getElementById("spanPassword").innerHTML = "The Password is empty";
+			correct = false;
+		}
+		
+			return correct;
+		}
+		
+		function checkImg()
+		{
+			if(check1() == false)
+			{
+			return false
+			}
+			else
+			{
+				document.forms[0].submit();
+			}
+		}
+		
+	</script>
+	<style>
+	</style>
+	
+	<body>
+		<form action="a.html" onsubmit="return check1()">
+			User Name :<input type="text" name="userName"> <span id="spanUser" class="error"></span>
+			<br>
+			Password : <input type="Password" name="password"> <span id="spanPassword" class="error"></span>
+			<br>
+			<input type="submit" name="Ok">
+		</form>
+		<img src="smiley.jpg" alt="Smiley face" height="100" width="100" onclick="checkImg()">
+	</body>
+</html>
